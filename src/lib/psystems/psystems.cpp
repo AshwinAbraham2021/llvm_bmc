@@ -66,26 +66,26 @@ psystems::psystems(options &o_, std::unique_ptr<llvm::Module> &m_,
                    bmc &bmc_)
     : bmc_pass(o_, o_.solver_ctx, bmc_), llvm::FunctionPass(ID), module(m_), ofcpp(o_.outDirPath.string() + "/cbmc.cpp"), current_indent(0), ncontext(o.ctx_bound)
 {
-    std::cout << "I am here!! This is the constructor! !\n";
-    for (auto &func : *module)
-    {
-        if (llvm::Function *Func = llvm::dyn_cast<llvm::Function>(&func))
-        {
-            std::cout << "FUNCTION: " << (Func->getName()).str() << std::endl;
-            // Func->dump();
-            for(auto& BB: Func->getBasicBlockList())
-            {
-                std::cout << "BASIC BLOCK: " << BB.getName().str() << std::endl;
-                // BB.dump();
-                for(auto& inst: BB.getInstList())
-                {
-                    std::cout << "INSTRUCTION: " << std::endl;
-                    inst.print(llvm::outs());
-                    llvm::outs() << '\n';
-                }
-            }
-        }
-    }
+    // std::cout << "I am here!! This is the constructor! !\n";
+    // for (auto &func : *module)
+    // {
+    //     if (llvm::Function *Func = llvm::dyn_cast<llvm::Function>(&func))
+    //     {
+    //         std::cout << "FUNCTION: " << (Func->getName()).str() << std::endl;
+    //         // Func->dump();
+    //         for(auto& BB: Func->getBasicBlockList())
+    //         {
+    //             std::cout << "BASIC BLOCK: " << BB.getName().str() << std::endl;
+    //             // BB.dump();
+    //             for(auto& inst: BB.getInstList())
+    //             {
+    //                 std::cout << "INSTRUCTION: " << std::endl;
+    //                 inst.print(llvm::outs());
+    //                 llvm::outs() << '\n';
+    //             }
+    //         }
+    //     }
+    // }
     // module->dump();
     // unsigned i = 0;
     // for( auto v : bmc_obj.concurrent_vars ) {

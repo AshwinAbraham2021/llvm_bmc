@@ -1,0 +1,3 @@
+# llvm_bmc command-line options Error - option '--input' cannot be specified more than once (triggered at /home/ashwinabraham/GitHub/llvm_bmc/src/lib/utils/options.cpp, 167)
+
+llvmbmc: /home/ashwinabraham/GitHub/llvm_bmc/src/lib/utils/options.cpp:167: bool options::parse_cmdline(int, char**): Assertion `false' failed.
